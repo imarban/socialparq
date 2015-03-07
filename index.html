@@ -9,20 +9,57 @@
 	<link href="static/socialparq/css/styles.css" rel="stylesheet" />
 </head>
 <body>
-<section class="bienvenida">
-  <i class="loader" />
-</section>
-<section class="registro">
-	<div class="registro-container">
-		<form>
-			<input placeholder="username" type="text"  class="username" />
-			<input placeholder="correo" type="email"  class="correo" />
-			<input placeholder="password" type="password"  class="password" />
-			<input type="button" class="send" />
-		</form>
-	</div>	
-</section>
+<div class="container-fluid">
+	<section class="bienvenida step paso1">
+		<i class="loader" ></i>
+		<h3 class="text-center">loading</h3>
+	</section>
+	<section class="inicia step paso2">
+    <div class="row">
+		  <div class="col-xs-10 col-xs-offset-1">
+			  <div class="registro-container text-center">
+						<h4 class="btn-registrarse">Registrarse</h4>
+						<hr>
+				    <h4 class="btn-iniciar">Iniciar sesión</h4>
+				</div>
+      </div>
+		</div>
+	</section>
+	<section class="registro step paso3">
+		<div class="row">
+		  <div class="col-xs-10 col-xs-offset-1">
+				<div class="registro-container">
+					<form>
+						<input placeholder="username" type="text"  class="username" />
+						<input placeholder="correo" type="email"  class="correo" />
+						<input placeholder="password" type="password"  class="password" />
+						<input type="button" class="send" value="enviar" />
+					</form>
+				</div>	
+			</div>	
+		</div>
+	</section>
+	<section class="sesion step paso4">
+		<div class="row">
+		  <div class="col-xs-10 col-xs-offset-1">
+				<div class="registro-container">
+					<form>
+						<input placeholder="username" type="text"  class="username" />
+						<input placeholder="password" type="password"  class="password" />
+						<input type="button" class="send" value="enviar" />
+					</form>
+				</div>	
+			</div>	
+		</div>
+	</section>
+	<section class="site step paso5">
+		<div class="map">
+    <!-- Aca vamos a poner el mapa -->
+		</div>
+	</section>
+</div>
 </body>
+<script type='text/javascript' src="static/socialparq/js/jquery.min.js"></script>
 <script type='text/javascript' src="static/socialparq/js/bootstrap.min.js"></script>
-<script type='text/javascript' src="static/socialparq/js/script.js"></script>
+<script type='text/javascript' src="static/socialparq/js/scripts.js"></script>
 </html>
