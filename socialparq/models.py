@@ -1,11 +1,11 @@
 import mongoengine
 from mongoengine.fields import StringField, IntField, DateTimeField, EmbeddedDocumentField, ListField, DecimalField, \
-    FloatField, PolygonField, LineStringField
+    FloatField, PolygonField, LineStringField, PointField
 
 
 class DiaHorario(mongoengine.EmbeddedDocument):
-    inicio = DateTimeField()
-    fin = DateTimeField()
+    inicio = StringField()
+    fin = StringField()
 
 
 class Horario(mongoengine.EmbeddedDocument):
@@ -28,7 +28,8 @@ class ZonaParquimetro(mongoengine.Document):
     horario = EmbeddedDocumentField(Horario)
     costo_minuto = FloatField(min_value=0)
     sup_km2 = FloatField(min_value=0)
-    area = LineStringField(required=True)
+    area = LineStringField(required=False)
+    lista_equipos = ListField(PointField())
 
     @property
     def caj_km2(self):
