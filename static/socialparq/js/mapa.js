@@ -67,12 +67,6 @@ function drawMarkers(latitude, longitude) {
 // To add the marker to the map, use the 'map' property
     var iconBase = 'http://localhost:8000/static/socialparq/images/';
 
-    var image = {
-        url: iconBase + 'pin.gif',
-        // This marker is 20 pixels wide by 32 pixels tall.
-        size: new google.maps.Size(100, 100)
-    };
-
     var marker = new google.maps.Marker({
         position: myLatlng,
         map: map,
