@@ -141,7 +141,7 @@ function getPoligonoZona(idZona) {
 }
 
 function getPoligonos() {
-    $.get("/poligonos", function (data) {
+    $.get("poligonos", function (data) {
         var polygons = [];
         $.each(data.zonas, function (key, value) {
             polygon = [];
@@ -156,7 +156,7 @@ function getPoligonos() {
 }
 
 function getParquimetrosCoordenada(latitud, longitud) {
-    $.get("/poligono-coordenada?latitud=" + latitud + "&longitud=" + longitud, function (data) {
+    $.get("poligono-coordenada?latitud=" + latitud + "&longitud=" + longitud, function (data) {
         var puntos = [];
         $.each(data.zona.equipos, function (key, value) {
             puntos.push(new google.maps.LatLng(value.latitud, value.longitud));
