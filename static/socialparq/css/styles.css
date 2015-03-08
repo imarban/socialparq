@@ -313,13 +313,18 @@ background-color:#00aef0;
 text-transform:uppercase;
 padding: 1em 0.6em;
 }
+.btn-busco, .btn-desocupe{
+background-color:#ff4d4d;	
+text-transform:uppercase;
+padding: 1em 0.6em;
+}
 .btn-cercano:hover, .btn-operacion:hover, .btn-cercano.active, .btn-operacion.active{
 background-color:#0094cc;	
 }
-.icon-cercano, .icon-operacion{
+.icon-cercano, .icon-operacion, .icon-desocupe, .icon-busco{
 margin-top:5px;	
 }
-.btn-cercano h5, .btn-operacion h5{
+.btn-cercano h5, .btn-operacion h5, .btn-desocupe h5, .btn-busco h5{
 font-size: 10px;
 margin-left: 5px;
 }
