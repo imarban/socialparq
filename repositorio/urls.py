@@ -8,5 +8,5 @@ urlpatterns = patterns('',
                        # url(r'^blog/', include('blog.urls')),
 
                        # url(r'^admin/', include(admin.site.urls)),
-                       url(r'^$', TemplateView.as_view(template_name="socialparq/../poligonos.html"))
+                       url(r'^$', TemplateView.as_view(template_name="socialparq/../socialparq/poligonos.html"))
 )
