@@ -107,6 +107,11 @@ var pasos = $('section').length;
 		$(".overlay").hide();
 	});	
 
+	//
+	$(".ubica").click(function(){
+		$(".ubicalo").show(); 
+		$(".desoc").hide();
+	});	
 
 //ES PARA INICIAR LA APLICACIÓN
 //CUANDO TENGAMOS EL SERVICIO LISTO VAMOS A INICIAR ESTA FUNCION
