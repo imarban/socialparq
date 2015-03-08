@@ -3,7 +3,6 @@ $(function() {
 var pasos;
 var pasos = $('section').length;
 
-
   function prender_menu(){
 		//$("#menu-lateral").toggle();	
 		$("#menu-lateral").animate({left: '0em'}, 500, function() { $(this).show();} );
@@ -81,33 +80,37 @@ var pasos = $('section').length;
 	$(".btn-cerrar").click(function(){
 		apagar_menu();
 	});
-  
-	//PARA CERRAR EL MODAL
-	$(".modals").click(function(){
-    $(this).hide();
-		$(".overlay").hide();
-	});	
 
-
+	$(".modal").click(function(){
+    $(this).show();
+	)};	
 //ES PARA INICIAR LA APLICACIÓN
 //CUANDO TENGAMOS EL SERVICIO LISTO VAMOS A INICIAR ESTA FUNCION
 //CHACAMENTE VOY A PONER ESTA FUNCION PARA SIMULARLO
-setTimeout(function() { mapa(); }, 500);
+setTimeout(function() { iniciar(); }, 500);
 });
 
-//PRENDEMOS EL MODAL DE GRACIAS
-function modal_gracias(){
-	$(".modal-gracias").show();
-	$(".modal-gracias").center();
-	$(".overlay").show();
-};
-
-//FUNCION PARA CENTRAR EL CONTENIDO
-jQuery.fn.center = function () {
-	this.css("position","absolute");
-	this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
-	$(window).scrollTop()) + "px");
-	this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
-	$(window).scrollLeft()) + "px");
-	return this;
+//FUNCIONES PARA EL MAPA
+/*
+function getLocation() {
+	if (navigator.geolocation) {
+			return navigator.geolocation.getCurrentPosition(initialize);
+	} else {
+			x.innerHTML = "Geolocation is not supported by this browser.";
+	}
 }
+function initialize() {
+
+	var location = new google.maps.LatLng(19.4405637, -99.1827162);
+	//var location = new google.maps.LatLng(position.coords.latitude,position.coords.altitude);
+
+	var mapOptions = {
+			zoom: 17,
+			center: location
+	};
+
+	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+}
+*/
+//google.maps.event.addDomListener(window, 'load', initialize);
