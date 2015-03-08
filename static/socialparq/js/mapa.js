@@ -5,6 +5,7 @@ function getLocation() {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
+
 function initialize() {
 
     var location = new google.maps.LatLng(19.4405637, -99.1827162);
@@ -25,14 +26,16 @@ function initialize() {
 
 function getZonas() {
     $.get("/zonas", function (data) {
+        zonasId = [];
         $.each(data.zonas, function (key, value) {
-            console.log(value.nombre);
-            console.log(value.id);
-        })
+            zonasId.push(value.id);
+        });
+
+        return zonasId;
     });
 }
 
-function drawPolygon(polygon) {
+function drawPolygon(polygons) {
     var location = new google.maps.LatLng(19.4405637, -99.1827162);
     //var location = new google.maps.LatLng(position.coords.latitude,position.coords.altitude);
 
@@ -43,20 +46,34 @@ function drawPolygon(polygon) {
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-    polygonDraw = new google.maps.Polygon({
-        paths: polygon,
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#FF0000',
-        fillOpacity: 0.35
-    });
+    var colores = ['#FF0000', '#2288AA', '#6644BB',
+        '#FFDDAA', '#33FFAA', '#88CCCC', '#A0A0A0',
+        '#B0B0B0', '#A9D5F1', '#9A8D3E', 'EAE1E1', '#FDFDFD', '#D8D7D6'];
 
-    polygonDraw.setMap(map);
+    var polygonDrawArray = [];
+
+    for (var i = 0; i < polygons.length; i++) {
+        var randomColor = colores[i];
+
+        var polygonDraw = new google.maps.Polygon({
+            paths: polygons[i],
+            strokeColor: randomColor,
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: randomColor,
+            fillOpacity: 0.35
+        });
+
+
+        polygonDrawArray.push(polygonDraw)
+    }
+
+    for (var i = 0; i < polygonDrawArray.length; i++) {
+        polygonDrawArray[i].setMap(map);
+    }
 }
 
 function drawMarkers(latitude, longitude) {
-    console.log(latitude, longitude);
     var myLatlng = new google.maps.LatLng(latitude, longitude);
     var mapOptions = {
         zoom: 17,
@@ -83,10 +100,24 @@ function getPoligonoZona(idZona) {
     $.get("/poligono-zona?zona=" + idZona, function (data) {
         var polygon = [];
         $.each(data.puntos, function (key, value) {
-            console.log(value.latitud, value.longitud);
             polygon.push(new google.maps.LatLng(value.latitud, value.longitud));
         });
         drawPolygon(polygon);
+    });
+}
+
+function getPoligonos() {
+    $.get("/poligonos", function (data) {
+        var polygons = [];
+        $.each(data.zonas, function (key, value) {
+            polygon = [];
+            $.each(value.points, function (key, value) {
+                console.log(value.latitud, value.longitud);
+                polygon.push(new google.maps.LatLng(value.latitud, value.longitud));
+            });
+            polygons.push(polygon);
+        });
+        drawPolygon(polygons);
     });
 }
 
@@ -109,4 +140,33 @@ function getEquiposZona(idZona) {
     });
 }
 
+function locateMe() {
+    var location = new google.maps.LatLng(19.4405637, -99.1827162);
+
+    var mapOptions = {
+        zoom: 17,
+        center: location
+    };
+
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+}
+
+function getCercano(latitud, longitud) {
+    $.get("/cercano?latitud=" + latitud + "&longitud=" + longitud, function (data) {
+        drawMarkers(data.latitud, data.longitud);
+    });
+}
+
+$(document).on('click', '.btn-operacion', function () {
+    getPoligonos();
+});
+
+
+$(document).on('click', '.pointer', function () {
+    locateMe();
+});
+
+$(document).on('click', '.btn-cercano', function () {
+    getCercano(19.383629, -99.180945);
+});
 
