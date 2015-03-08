@@ -267,7 +267,8 @@ background-color:#0094cc;
 margin-top:5px;	
 }
 .btn-cercano h5, .btn-operacion h5{
-font-size:11px;
+font-size: 10px;
+margin-left: 5px;
 }
 .filtros-row{
 position: relative;
