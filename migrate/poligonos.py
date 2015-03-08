@@ -90,7 +90,7 @@ def migrate_equipos():
 
 
 def migrate(request):
-    # migrate_poligonos()
+    migrate_poligonos()
     migrate_equipos()
 
 
