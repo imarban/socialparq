@@ -1,8 +1,8 @@
 /*PROYECTO*/
 *{
-font-family:;
+font-family: 'Lato', sans-serif;
 font-size:12px;
-color:#000000;
+color:#FFFFFF;
 }
 input{
 width:100%;	
@@ -10,8 +10,39 @@ height:3em;
 }
 section{
 display:none;	
+width:100%;
+height:100%;
+}
+header{
+background-color:#00aef0;	
+padding-top:1em;
+padding-bottom:1em;
+}
+input{
+border:none;	
+margin-bottom:1em;
+padding-left:1em;
+text-transform:uppercase;
+height:4em;
+}
+.global-container{	
+background-color:#ffffff;
+padding-bottom:100%;
+}
+section label{
+text-transform:uppercase;	
+color:#FFFFFF;
 }
 /*BIENVENIDA*/
+/*
+.bienvenida{
+background:url("../images/loading.gif") no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+*/
+}
 .loader{}
 section.paso1{
 display:block;	
@@ -19,13 +50,38 @@ display:block;
 section.paso1 h3{
 margin-top:10em;
 }
+/*INICIA*/
+.inicia h4{
+text-transform:uppercase;	
+}
 /*REGISTRO*/
 section.paso2 .registro-container{
 margin-top:20em;
 }
+.send{
+height:4em;	
+font-size:14px;
+text-transform:uppercase;
+text-align: center;
+cursor:pointer;
+opacity:0.8;
+}
+.send-facebook{
+background-color:#3158af;	
+line-height:4em;
+}
+.send-registro{	
+border:2px solid #FFFFFF;
+background-color:#00a0dd;
+}
+.fb-icon{
+background-image:url(../images/icon-facebook.png);	
+width:10px;
+height:10px;
+}
 /*REGISTRO*/
 section.paso3 .registro-container{
-margin-top:20em;
+margin-top:8em;
 }
 /*LOGIN*/
 section.paso4 .registro-container{

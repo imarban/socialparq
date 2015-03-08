@@ -21,11 +21,12 @@ var pasos = $('section').length;
 	} 
 
 	function iniciar(){
+		//cambiamos el color de fondo por el azul
+		$(".global-container").css("background-color", "#00a0dd");
 		//VAMOS A ESCONDER LAS SECCIONES QUE NO NECESITAMOS
 		//PRENDEMOS EL PASO 1  
 		apagamos(1);
     prendemos(2);
-
 	}//FINAL DE INICIAR
 
 	function registro(){
