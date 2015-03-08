@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Simple Polygon</title>
-    <style>
-        html, body, #map-canvas {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw19uWfsUY6D7Qm9DdJEPvrQY0Dw74TL4&sensor=true"></script>
-    <script>
 
         function getLocation() {
             if (navigator.geolocation) {
@@ -40,11 +25,4 @@
              */
         }
 
-        google.maps.event.addDomListener(window, 'load', initialize);
-
-    </script>
-</head>
-<body>
-<div id="map-canvas"></div>
-</body>
-</html>
+        //google.maps.event.addDomListener(window, 'load', initialize);

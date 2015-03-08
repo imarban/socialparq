@@ -4,6 +4,13 @@ font-family: 'Lato', sans-serif;
 font-size:12px;
 color:#FFFFFF;
 }
+/*
+html, body, #map-canvas {
+height: 100%;
+margin: 0;
+padding: 0;
+}
+*/
 section{
 display:none;	
 width:100%;
@@ -31,6 +38,68 @@ section label{
 text-transform:uppercase;	
 color:#FFFFFF;
 }
+.navbar-toggle {
+margin-right: 0px;
+border-radius: 0px;
+border: 0px solid transparent;
+margin-top: 0px;
+margin-bottom: 0px;
+padding: 14px 17px;
+}
+.sr-only {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0,0,0,0);
+border: 0;
+}
+.navbar-toggle .icon-bar {
+background-color: #fff;
+}
+.navbar-toggle .icon-bar {
+display: block;
+width: 22px;
+height: 3px;
+border-radius: 1px;
+}
+#menu-lateral{
+left:-22em;
+position:absolute;
+height:100%;
+z-index:100;
+background-color:#00a0dd;
+top:0px;
+width:80%;
+-webkit-box-shadow: 2px 0px 11px 0px rgba(50, 50, 50, 0.63);
+-moz-box-shadow:    2px 0px 11px 0px rgba(50, 50, 50, 0.63);
+box-shadow:         2px 0px 11px 0px rgba(50, 50, 50, 0.63);
+}
+#menu-lateral li{
+height:4em;
+list-style:none;
+}
+.menu-lateral ul{
+padding-left:0px;	
+}
+.img-perfil{
+width:100%;	
+}
+.img-user{
+width:7em;	
+position:relative;
+top: -5em;
+left: 1em;
+}
+.btn-cerrar{
+width:25px;
+height:25px;
+position:absolute;
+margin: 2em;
+cursor:pointer;
+}
 /*BIENVENIDA*/
 /*
 .bienvenida{
@@ -48,6 +117,9 @@ display:block;
 section.paso1 h3{
 margin-top:10em;
 }
+.mapa-gif{
+margin-top:6em;	
+}
 /*INICIA*/
 .inicia h4{
 text-transform:uppercase;	
@@ -55,6 +127,7 @@ text-transform:uppercase;
 /*REGISTRO*/
 section.paso2 .registro-container{
 margin-top:20em;
+margin-top:17em;
 }
 .send{
 height:3em;	
