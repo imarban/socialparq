@@ -15,7 +15,8 @@ function initialize() {
 
     var mapOptions = {
         zoom: 17,
-        center: location
+        center: location,
+        disableDefaultUI: true
     };
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -38,7 +39,8 @@ function drawPolygon(polygons) {
 
     var mapOptions = {
         zoom: 17,
-        center: location
+        center: location,
+        disableDefaultUI: true
     };
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -74,7 +76,8 @@ function drawMarkers(latitude, longitude, imageName) {
     var myLatlng = new google.maps.LatLng(latitude, longitude);
     var mapOptions = {
         zoom: 17,
-        center: myLatlng
+        center: myLatlng,
+        disableDefaultUI: true
     };
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
@@ -154,7 +157,8 @@ function getLugarDisponible() {
     var location = new google.maps.LatLng(lugar[0], lugar[1]);
     var mapOptions = {
         zoom: 17,
-        center: location
+        center: location,
+        disableDefaultUI: true
     };
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
