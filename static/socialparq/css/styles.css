@@ -356,7 +356,7 @@ a.tooltips {
 position: absolute;
 display: inline;
 left:50px;
-top:150px;
+top:250px;
 }
 a.tooltips span p{
 margin:2px auto;	
@@ -392,4 +392,13 @@ left: 50%;
 margin-left: -76px;
 z-index: 999;
 padding: 9px;
+}
+.me-retiro-title{
+background-color:#ff5f5f;
+}
+a.tooltips.tooltips-retiro span{
+width:23em;	
+}
+.btn-tengo-prisa{
+border-right:1px solid #ff8383;	
 }

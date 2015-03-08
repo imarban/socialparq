@@ -60,6 +60,16 @@ var pasos = $('section').length;
 		$("html, body, #map-canvas, .map").css({height: "100%", margin: "0", padding: "0" });
 	}
   
+	//modal me ayudo
+	$(".btn-si").click(function() {
+    modal_ejemplo();
+	});
+
+	//modal me ayudo
+	$(".btn-no").click(function() {
+    modal_gracias();
+	});
+
 	//boton de registro
 	$(".btn-registrarse").click(function() {
     registro();
@@ -85,6 +95,10 @@ var pasos = $('section').length;
 
 	$(".btn-cerrar").click(function(){
 		apagar_menu();
+	});
+
+	$(".btn-desocupe").click(function(){
+	  $("#me_retiro").css({display:"block"});	
 	});
   
 	//PARA CERRAR EL MODAL
