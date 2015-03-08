@@ -76,7 +76,9 @@ function drawMultiMarkers(markers) {
 
     var mapOptions = {
         zoom: 17,
-        center: location
+        center: location,
+        disableDefaultUI: true
+
     };
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
