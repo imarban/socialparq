@@ -3,12 +3,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!--
-    <meta name="viewport" content="minimal-ui">
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+		<!--
+		<meta name="viewport" content="minimal-ui">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		-->
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
     <title>Social Park - Home </title>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700,100' rel='stylesheet' type='text/css'>
     <link href="{% static "socialparq/css/bootstrap.css" %}" rel="stylesheet"/>
@@ -18,9 +18,7 @@
 <div class="container-fluid global-container">
     <section class="bienvenida step paso1">
         <i class="loader" style="display:none;"></i>
-
         <h3 class="text-center" style="display:none;">loading</h3>
-
         <div class="row">
             <div class="col-xs-3">
                 <br/>
@@ -34,77 +32,73 @@
         </div>
     </section>
     <section class=" inicia step paso2">
-        <div class="row">
-            <div class="col-xs-5 col-xs-offset-3">
+		    <div class="row">
+				    <div class="col-xs-5 col-xs-offset-3">
                 <img src="{% static "socialparq/images/logo-big.png" %}" class="img-responsive"/>
             </div>
-        </div>
-        <div class="row">
+				</div>
+				<div class="row">
             <div class="col-xs-10 col-xs-offset-1 text-center">
-                <p><b>SocialParq</b> es la primera aplicación que te ayuda a encontrar dónde estacionarte con ayuda de
-                    otros usuarios.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <!--
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    </ol>
-                    -->
+						  <p><b>SocialParq</b> es la primera aplicación que te ayuda a encontrar dónde estacionarte con ayuda de otros usuarios.</p>
+						</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1">
+						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+							<!--
+							<ol class="carousel-indicators">
+								<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							</ol>
+							-->
 
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <div class="carousel-caption">
-                                <p><b>SocialParq</b> es la primera aplicación que te ayuda a encontrar dónde
-                                    estacionarte con ayuda de otros usuarios.</p>
-                            </div>
-                            <img src="{% static "socialparq/images/iphone.png" %}" class="img-responsive"/>
-                        </div>
-                        <div class="item">
-                            <div class="carousel-caption">
-                                <p><b>SocialParq</b> es la primera aplicación que te ayuda a encontrar dónde
-                                    estacionarte con ayuda de otros usuarios.</p>
-                            </div>
-                            <img src="{% static "socialparq/images/iphone.png" %}" class="img-responsive"/>
-                        </div>
-                    </div>
-                </div>
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<div class="carousel-caption">
+									<p><b>SocialParq</b> es la primera aplicación que te ayuda a encontrar dónde estacionarte con ayuda de otros usuarios.</p>
+								</div>
+								<img src="{% static "socialparq/images/iphone.png" %}" class="img-responsive"/>
+							</div>
+							<div class="item">
+								<div class="carousel-caption">
+									<p><b>SocialParq</b> es la primera aplicación que te ayuda a encontrar dónde estacionarte con ayuda de otros usuarios.</p>
+								</div>
+								<img src="{% static "socialparq/images/iphone.png" %}" class="img-responsive"/>
+							</div>
+						</div>
+					</div>
+					<!-- Controls -->
+					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+				</div>
         <div class="row barra-sesiones">
-            <div class="col-xs-6 col-xs-offset-0 text-center">
-                <h4 class="btn-iniciar">Iniciar sesión</h4>
-            </div>
+            <div class="col-xs-6 col-xs-offset-0 text-center">	
+								<h4 class="btn-iniciar">Iniciar sesión</h4>
+						</div>
             <div class="col-xs-6">
-                <h4 class="btn-registrarse">Registrarse</h4>
-            </div>
-            <div class="col-xs-12">
-                <div class="send send-facebook">
-                    <div class="row">
-                        <div class="col-xs-2 col-xs-offset-1" style="padding-right:0px;">
-                            <img src="{% static "socialparq/images/icon-facebook.png" %}"
-                                 class=" img-responsive right-block icon-facebook"/>
-                        </div>
-                        <div class="col-xs-9 text-left" style="padding-left:10px;">
-                            ingresa con facebook
-                        </div>
-                    </div>
-                </div>
-            </div>
+								<h4 class="btn-registrarse">Registrarse</h4>
+						</div>
+						<div class="col-xs-12">
+							<div class="send send-facebook">
+								<div class="row">
+										<div class="col-xs-2 col-xs-offset-1" style="padding-right:0px;">
+												<img src="{% static "socialparq/images/icon-facebook.png" %}" class=" img-responsive right-block icon-facebook"/>
+										</div>
+										<div class="col-xs-9 text-left" style="padding-left:10px;">
+												ingresa con facebook
+										</div>
+								</div>
+							</div>
+						</div>
         </div>
 
     </section>
@@ -128,9 +122,7 @@
                         <input placeholder="password" type="password" class="password" required/>
                         <label class="error error-password">error</label>
                         <input type="button" class="send send-registro" value="enviar"/>
-                        <input type="button" class="send send-facebook" value="ingresa con facebook"
-                               style="display:none;"/>
-
+                        <input type="button" class="send send-facebook" value="ingresa con facebook" style="display:none;" />
                         <div class="send send-facebook">
                             <div class="row">
                                 <div class="col-xs-2 col-xs-offset-1" style="padding-right:0px;">
@@ -169,45 +161,43 @@
     </section>
     <section class="site step paso5">
         <header class="row">
-            <div class="col-xs-3">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
+				    <div class="col-xs-3">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						</div>
             <div class="col-xs-3 col-xs-offset-2">
                 <img src="{% static "socialparq/images/logo.png" %}" class="img-responsive"/>
             </div>
         </header>
-        <div class="row filtros-row">
-            <div class="col-xs-6">
-                <div class="btn-busco">
-                    <div class="row">
-                        <div class="col-xs-4" style="padding-right:0px;">
-                            <img src="{% static "socialparq/images/icon-cercano.png" %}"
-                                 class="icon-cercano img-responsive right-block"/>
-                        </div>
-                        <div class="col-xs-8 text-left" style="padding-left:0px;">
-                            <h5>Busco donde estacionarme</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6">
-                <div class="btn-desocupe">
-                    <div class="row">
-                        <div class="col-xs-4" style="padding-right:0px;">
-                            <img src="{% static "socialparq/images/icon-operacion.png" %}"
-                                 class="icon-cercano img-responsive right-block"/>
-                        </div>
-                        <div class="col-xs-8 text-left" style="padding-left:0px;">
-                            <h5>Desocuparé un lugar</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--
+				<div class="row filtros-row">
+					<div class="col-xs-6">
+						<div class="btn-busco">
+							<div class="row">
+								<div class="col-xs-4" style="padding-right:0px;">
+									<img src="{% static "socialparq/images/icon-cercano.png" %}" class="icon-cercano img-responsive right-block" />
+								</div>
+								<div class="col-xs-8 text-left" style="padding-left:0px;">
+									<h5>Busco donde estacionarme</h5>
+								</div>
+							</div>
+						</div>
+					</div>	
+					<div class="col-xs-6">
+						<div class="btn-desocupe">
+							<div class="row">
+								<div class="col-xs-4" style="padding-right:0px;">			
+									<img src="{% static "socialparq/images/icon-operacion.png" %}" class="icon-cercano img-responsive right-block" />
+								</div>
+								<div class="col-xs-8 text-left" style="padding-left:0px;">
+									<h5>Desocuparé un lugar</h5>
+								</div>
+							</div>
+						</div>
+					</div>	
+					<!--
 					<div class="col-xs-6">
 						<div class="btn-cercano">
 							<div class="row">
@@ -233,73 +223,82 @@
 						</div>
 					</div>	
 					-->
-        </div>
+				</div>	
     </section>
 </div>
 <div class="map">
-    <div id="menu-lateral" class="menu-lateral">
-        <img src="{% static "socialparq/images/btn-cerrar.png" %}" class="btn-cerrar"/>
-        <img src="{% static "socialparq/images/perfil.png" %}" class="img-perfil"/>
-        <img src="{% static "socialparq/images/icon-user.png" %}" class="img-user"/>
+  <div id="menu-lateral" class="menu-lateral">
+	  <img src="{% static "socialparq/images/btn-cerrar.png" %}" class="btn-cerrar" />
+	  <img src="{% static "socialparq/images/perfil.png" %}" class="img-perfil" />
+	  <img src="{% static "socialparq/images/icon-user.png" %}" class="img-user" />
+		<div class="text-container">
+			<h5>MARGE RACOON</h5>
+			<p>Auto: Rojo</p>
+		</div>	
+	  <ul> 
+		  <li>ubica tu parquímetro<img src="{% static "socialparq/images/btn-flecha.png" %}" class="btn-flecha" /></li>
+		  <li>transporte alterno<img src="{% static "socialparq/images/btn-flecha.png" %}" class="btn-flecha" /></li>
+		  <li>contacto<img src="{% static "socialparq/images/btn-flecha.png" %}" class="btn-flecha" /></li>
+		</ul>
+	</div>
+	<div id="map-canvas"></div>
+	<div class="modals modal-gracias">
+    <div class="modal-container">	
+		   <img src="{% static "socialparq/images/badge1.png" %}" class="badges" />
+		   <h4 class="modal-mensaje">¡Gracias por avisar!</h4>
+		   <h4>Has obtenido 100 puntos</h4>
+		</div>
+	</div>
+	<div class="modals modal-ejemplo">
+    <div class="modal-container">	
+		   <img src="{% static "socialparq/images/badge2.png" %}" class="badges" />
+		   <h4 class="modal-mensaje">¡Eres un ciudadadano ejemplar!</h4>
+		   <h4>Has obtenido 300 puntos</h4>
+		</div>
+	</div>
+	<div class="modals modal-ayudo">
+    <div class="modal-container">	
+		   <img src="{% static "socialparq/images/perfil-ayuda.png" %}" class="foto-ayudo" />
+		   <h4 class="mensaje-ayudo">¿RODOROZC te ayudó a encontrar lugar?</h4>
+		   <img src="{% static "socialparq/images/btn-no.png" %}" class="btn-no" />
+		   <img src="{% static "socialparq/images/btn-si.png" %}" class="btn-si" />
 
-        <div class="text-container">
-            <h5>MARGE RACOON</h5>
-
-            <p>Auto: Rojo</p>
-        </div>
-        <ul>
-            <li>ubica tu parquímetro<img src="{% static "socialparq/images/btn-flecha.png" %}" class="btn-flecha"/></li>
-            <li>transporte alterno<img src="{% static "socialparq/images/btn-flecha.png" %}" class="btn-flecha"/></li>
-            <li>contacto<img src="{% static "socialparq/images/btn-flecha.png" %}" class="btn-flecha"/></li>
-        </ul>
-    </div>
-    <div id="map-canvas"></div>
-    <div class="modals modal-gracias">
-        <div class="modal-container">
-            <img src="{% static "socialparq/images/badge1.png" %}" class="badges"/>
-            <h4 class="modal-mensaje">¡Gracias por avisar!</h4>
-            <h4>Has obtenido 100 puntos</h4>
-        </div>
-    </div>
-    <div class="modals modal-ejemplo">
-        <div class="modal-container">
-            <img src="{% static "socialparq/images/badge2.png" %}" class="badges"/>
-            <h4 class="modal-mensaje">¡Eres un ciudadadano ejemplar!</h4>
-            <h4>Has obtenido 300 puntos</h4>
-        </div>
-    </div>
-    <div class="modals modal-ayudo">
-        <div class="modal-container">
-            <img src="{% static "socialparq/images/perfil-ayuda.png" %}" class="foto-ayudo"/>
-            <h4 class="mensaje-ayudo">¿RODOROZC te ayudó a encontrar lugar?</h4>
-            <img src="{% static "socialparq/images/btn-no.png" %}" class="btn-no"/>
-            <img src="{% static "socialparq/images/btn-si.png" %}" class="btn-si"/>
-
-        </div>
-    </div>
-    <div class="overlay"></div>
-    <!-- aqui hay lugar tooltip -->
-
-    <!-- me retiro tooltip -->
-    <a id="me_retiro" class="tooltips hide" href="#">
-        click tooltip
+		</div>
+	</div>
+	<div class="overlay"></div>
+	<!-- aqui hay lugar tooltip -->
+	<a id="hay_lugar" class="tooltips hide" href="#">
+		 click tooltip
 		<span>
 			 <p class="" style="text-transform:uppercase;">Aquí hay un lugar</p>	
 			 <p>RodOrozc te espera</p>
 			 <p>Auto gris</p>
 		</span>
-    </a>
-    <!--
-    <a class="tooltips" href="#">
-        <span>
-             <p>Aquí hay un lugar</p>
-             <p>RodOrozc te espera</p>
-             <p>Auto gris</p>
-        </span>
-    </a>
-    -->
-    <img src="{% static "socialparq/images/pointer.png" %}" class="pointer"/>
-</div>
+	</a>
+	<!-- me retiro tooltip -->
+	<a id="me_retiro" class="tooltips tooltips-retiro hide" href="#">
+		<span>
+			 <div class="row">
+				 <div class="col-xs-12 me-retiro-title text-center">
+					 <p class="text-center" style="text-transform:uppercase;text-transform:uppercase;text-align:center;">Me retiro</p>	
+					 <p class="text-center" style="text-align:center;">Desocupare un lugar</p>	
+				 </div>	 
+			   <div class="col-xs-6 btn-tengo-prisa">Tengo prisa, notifica a todos</div>
+			   <div class="col-xs-6 btn-puedo-esperar">Puedo esperar y ayudar a alguien</div>
+			 </div>
+		</span>
+	</a>
+	<!--
+	<a class="tooltips" href="#">
+		<span>
+			 <p>Aquí hay un lugar</p>	
+			 <p>RodOrozc te espera</p>
+			 <p>Auto gris</p>
+		</span>
+	</a>
+	-->
+	<img src="{% static "socialparq/images/pointer.png" %}" class="pointer" />
+</div>	
 </body>
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 <script type='text/javascript' src="{% static "socialparq/js/jquery.min.js" %}"></script>
