@@ -255,3 +255,25 @@ color:#000000;
 opacity:1;
 display:none;
 }
+.btn-cercano, .btn-operacion{
+background-color:#00aef0;	
+text-transform:uppercase;
+padding: 1em 0.6em;
+}
+.btn-cercano:hover, .btn-operacion:hover, .btn-cercano.active, .btn-operacion.active{
+background-color:#0094cc;	
+}
+.icon-cercano, .icon-operacion{
+margin-top:5px;	
+}
+.btn-cercano h5, .btn-operacion h5{
+font-size:11px;
+}
+.filtros-row{
+position: relative;
+top: 2em;
+z-index: 99;
+}
+.map{
+margin-top: -5.7em !important;	
+}
