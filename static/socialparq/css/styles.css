@@ -204,6 +204,9 @@ text-align:center;
 text-transform:uppercase;	
 padding-top: 3.9em;
 }
+.mensaje-ayudo{
+padding-top: 3.9em;
+}
 .modal-container{
 width: 19em;
 height: 15em;
@@ -214,11 +217,32 @@ color:#FFFFFF;
 box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 1);
 margin:1em;
 }
+.btn-no, .btn-si{
+width:7em;	
+margin-left: 1.7em;
+}
+.btn-no:hover, .btn-si:hover{
+opacity:0.8;
+}
 .badges{
 width: 15em;
 position: absolute;
 right: 3em;
 top: -38px;
+}
+.pointer{
+position: absolute;
+bottom: 0px;
+right: 0px;
+width: 4em;
+margin: 2em;
+cursor:pointer;
+}
+.foto-ayudo{
+width: 9em;
+position: absolute;
+right: 5.9em;
+top: 2px;
 }
 .overlay{
 position: absolute;
