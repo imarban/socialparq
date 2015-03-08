@@ -6,7 +6,7 @@ function getLocation() {
     }
 }
 
-var posicionesFijas = [[19.38465, -99.18257], [19.38084967900005, -99.18115462199995], [19.38309, -99.18093], [19.38182181300004, -99.18105411099998]]
+var posicionesFijas = [[19.426592800000037, -99.17825685999998], [19.428898540000034, -99.17725241999995], [19.42661914000007, -99.176368], [19.428582, -99.175806]]
 
 function initialize() {
 
@@ -15,7 +15,8 @@ function initialize() {
 
     var mapOptions = {
         zoom: 17,
-        center: location
+        center: location,
+        disableDefaultUI: true
     };
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -38,7 +39,8 @@ function drawPolygon(polygons) {
 
     var mapOptions = {
         zoom: 17,
-        center: location
+        center: location,
+        disableDefaultUI: true
     };
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -74,17 +76,18 @@ function drawMarkers(latitude, longitude, imageName) {
     var myLatlng = new google.maps.LatLng(latitude, longitude);
     var mapOptions = {
         zoom: 17,
-        center: myLatlng
+        center: myLatlng,
+        disableDefaultUI: true
     };
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
 // To add the marker to the map, use the 'map' property
-    var iconBase = 'http://localhost:8000/static/socialparq/images/';
+    var iconBase = 'http://23.253.252.190/static/socialparq/images/';
 
     var marker = new google.maps.Marker({
         position: myLatlng,
         map: map,
-        title: "Hello World!",
+        title: "",
         icon: iconBase + imageName
 
     });
@@ -154,12 +157,13 @@ function getLugarDisponible() {
     var location = new google.maps.LatLng(lugar[0], lugar[1]);
     var mapOptions = {
         zoom: 17,
-        center: location
+        center: location,
+        disableDefaultUI: true
     };
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-    var iconBase = 'http://localhost:8000/static/socialparq/images/';
+    var iconBase = 'http://23.253.252.190/static/socialparq/images/';
 
     var infowindow = new google.maps.InfoWindow({
         //content: "<a id='hay_lugar' class='tooltips' href='#'><span><p class='' style='text-transform:uppercase;'>Aquí hay un lugar</p>	<p"
