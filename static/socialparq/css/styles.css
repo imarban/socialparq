@@ -11,6 +11,11 @@ margin: 0;
 padding: 0;
 }
 */
+body{
+max-width: 25em;	
+margin:auto auto;
+display:block;
+}
 section{
 display:none;	
 width:100%;
@@ -72,7 +77,7 @@ height:100%;
 z-index:100;
 background-color:#00a0dd;
 top:0px;
-width:80%;
+width:22em;
 -webkit-box-shadow: 2px 0px 11px 0px rgba(50, 50, 50, 0.63);
 -moz-box-shadow:    2px 0px 11px 0px rgba(50, 50, 50, 0.63);
 box-shadow:         2px 0px 11px 0px rgba(50, 50, 50, 0.63);
