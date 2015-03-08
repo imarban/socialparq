@@ -65,7 +65,7 @@ if __name__ == "__main__":
             for folder in feature.features():
                 for placemark in folder.features():
                     for schema in placemark.extended_data.__dict__['elements']:
-                        print schema.__dict__
+                        print schema.__dict__['_data'][0]
 
     migrate_equipos()
 
