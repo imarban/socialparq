@@ -1,2 +1,2 @@
 # socialparq
-Aplicación creada para ubicar de manera rápida y sencilla un lugar de estacionamiento libre en las zonas de parquímetros de la Ciudad de México.
+SocialParq es la primera aplicación que te ayuda a encontrar dónde estacionarte con ayuda de otros usuarios.
