@@ -35,7 +35,6 @@ function getZonas() {
 
 function drawPolygon(polygons) {
     var location = new google.maps.LatLng(19.440525, -99.181594);
-    //var location = new google.maps.LatLng(position.coords.latitude,position.coords.altitude);
 
     var mapOptions = {
         zoom: 17,
@@ -71,6 +70,39 @@ function drawPolygon(polygons) {
         polygonDrawArray[i].setMap(map);
     }
 }
+
+function drawMultiMarkers(markers) {
+    var location = new google.maps.LatLng(19.380652711000018, -99.18149056299995);
+
+    var mapOptions = {
+        zoom: 17,
+        center: location
+    };
+
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    var iconBase = 'http://23.253.252.190/static/socialparq/images/';
+
+
+    var markerDrawArray = [];
+
+    for (var i = 0; i < markers.length; i++) {
+
+        var markerDraw = new google.maps.Marker({
+            position: markers[i],
+            map: map,
+            title: "",
+            icon: iconBase + "pin-parking.png"
+        });
+
+        markerDrawArray.push(markerDraw)
+    }
+
+    for (var i = 0; i < markerDrawArray.length; i++) {
+        markerDrawArray[i].setMap(map);
+    }
+
+}
+
 
 function drawMarkers(latitude, longitude, imageName) {
     var myLatlng = new google.maps.LatLng(latitude, longitude);
@@ -121,12 +153,14 @@ function getPoligonos() {
     });
 }
 
-function getParquimetrosCoordenada(longitud, latitud) {
+function getParquimetrosCoordenada(latitud, longitud) {
     $.get("/poligono-coordenada?latitud=" + latitud + "&longitud=" + longitud, function (data) {
-        console.log(data.zona.nombre, data.zona.id);
+        var puntos = [];
         $.each(data.zona.equipos, function (key, value) {
-            console.log(value.latitud, value.longitud);
+            puntos.push(new google.maps.LatLng(value.latitud, value.longitud));
         });
+        drawMultiMarkers(puntos);
+
     });
 }
 
@@ -199,7 +233,7 @@ $(document).on('click', '.pointer', function () {
 });
 
 $(document).on('click', '.btn-cercano', function () {
-    getCercano(19.383629, -99.180945);
+    getParquimetrosCoordenada(19.380652711000018, -99.18149056299995);
 });
 
 $(document).on('click', '.btn-busco', function () {
