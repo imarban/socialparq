@@ -1,3 +1,7 @@
+import numpy
+from numpy.core.numeric import array
+
+
 def point_in_poly(x, y, poly):
     n = len(poly)
     inside = False
@@ -32,3 +36,15 @@ def point_on_border(x, y, poly):
                     if v1x * v1x + v1y * v1y >= v2x * v2x + v2y * v2y:
                         return True
     return False
+
+
+def closest_node(node, nodes):
+    node = array(node)
+    nodes = array(nodes)
+    for i in nodes:
+        print sum((node - i) ** 2, 1).argmin()
+
+
+def find_nearest_vector(array, value):
+    idx = numpy.array([numpy.linalg.norm(x + y) for (x, y) in array - value]).argmin()
+    return array[idx]

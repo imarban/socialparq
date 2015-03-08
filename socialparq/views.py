@@ -1,9 +1,9 @@
 from django.http.response import JsonResponse
-from django.shortcuts import render
 
 # Create your views here.
 from django.views.generic.base import TemplateView
 from mongoengine.errors import DoesNotExist
+import numpy
 import geometry
 from socialparq.models import ZonaParquimetro
 
@@ -42,6 +42,16 @@ class PoligonoZonaView(JsonView):
 
         for point in zona.area['coordinates']:
             context['puntos'].append({'latitud': point[1], 'longitud': point[0]})
+
+        return context
+
+
+class PoligonosView(JsonView):
+    def get_context_data(self, **kwargs):
+        context = {'zonas': []}
+        for zona in ZonaParquimetro.objects:
+            context['zonas'].append(
+                {'points': [{'latitud': point[1], 'longitud': point[0]} for point in zona.area['coordinates']]})
 
         return context
 
@@ -89,3 +99,25 @@ class PoligonoCoordenadaView(JsonView):
                             'equipos': [{'latitud': point[1], 'longitud': point[0]} for point in zona.lista_equipos]})
 
         return context
+
+
+class ParquimetroMasCercano(JsonView):
+    def get_context_data(self, **kwargs):
+        latitud = self.request.GET.get('latitud', '')
+        longitud = self.request.GET.get('longitud', '')
+        if not longitud or not latitud:
+            return {}
+
+        latitud, longitud = float(latitud), float(longitud)
+
+        puntos = []
+        for zona in ZonaParquimetro.objects:
+            for equipo in zona.lista_equipos:
+                puntos.append([equipo[0], equipo[1]])
+        puntos = numpy.array(puntos)
+
+        nearest = geometry.find_nearest_vector(puntos, [latitud, longitud])
+
+        return {'latitud': nearest[1], 'longitud': nearest[0]}
+
+

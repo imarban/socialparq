@@ -5,7 +5,8 @@ from django.views.generic.base import TemplateView
 from migrate.poligonos import migrate
 
 from perfilador.views import CreateUserView
-from socialparq.views import ZonaParqsView, PoligonoZonaView, EquipoZonaView, PoligonoCoordenadaView
+from socialparq.views import ZonaParqsView, PoligonoZonaView, EquipoZonaView, PoligonoCoordenadaView, PoligonosView, \
+    ParquimetroMasCercano
 
 
 urlpatterns = patterns('',
@@ -14,7 +15,8 @@ urlpatterns = patterns('',
                        # url(r'^blog/', include('blog.urls')),
 
                        # url(r'^admin/', include(admin.site.urls)),
-                       url(r'^poligonos/$', TemplateView.as_view(template_name="socialparq/poligonos.html")),
+                       url(r'^poligonos/$', PoligonosView.as_view()),
+                       url(r'^cercano/$', ParquimetroMasCercano.as_view()),
                        url(r'^migrate$', migrate),
                        url(r'^zonas$', ZonaParqsView.as_view(), name="zonas"),
                        url(r'^poligono-zona$', PoligonoZonaView.as_view(), name="poligono_zona"),
