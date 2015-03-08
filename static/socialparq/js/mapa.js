@@ -37,7 +37,7 @@ function drawPolygon(polygons) {
     var location = new google.maps.LatLng(19.440525, -99.181594);
 
     var mapOptions = {
-        zoom: 17,
+        zoom: 13,
         center: location,
         disableDefaultUI: true
     };
