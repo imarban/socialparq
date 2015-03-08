@@ -20,8 +20,17 @@ section.paso1 h3{
 margin-top:10em;
 }
 /*REGISTRO*/
-
-
+section.paso2 .registro-container{
+margin-top:20em;
+}
+/*REGISTRO*/
+section.paso3 .registro-container{
+margin-top:20em;
+}
+/*LOGIN*/
+section.paso4 .registro-container{
+margin-top:20em;
+}
 /*SITE*/
 
 
