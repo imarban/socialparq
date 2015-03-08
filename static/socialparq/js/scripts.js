@@ -53,5 +53,5 @@ var pasos = $('section').length;
 //ES PARA INICIAR LA APLICACIÓN
 //CUANDO TENGAMOS EL SERVICIO LISTO VAMOS A INICIAR ESTA FUNCION
 //CHACAMENTE VOY A PONER ESTA FUNCION PARA SIMULARLO
-setTimeout(function() { iniciar(); }, 1000);
+setTimeout(function() { iniciar(); }, 4000);
 });
