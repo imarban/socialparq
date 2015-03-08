@@ -102,6 +102,21 @@ function modal_gracias(){
 	$(".overlay").show();
 };
 
+//PRENDEMOS EL MODAL DE EJEMPLO
+function modal_ejemplo(){
+	$(".modals").hide();
+	$(".modal-ejemplo").show();
+	$(".modal-ejemplo").center();
+	$(".overlay").show();
+};
+
+//MODAL DE TE AYUDO
+function modal_ayudo(){
+	$(".modals").hide();
+	$(".modal-ayudo").show();
+	$(".modal-ayudo").center();
+	$(".overlay").show();
+};
 //FUNCION PARA CENTRAR EL CONTENIDO
 jQuery.fn.center = function () {
 	this.css("position","absolute");
