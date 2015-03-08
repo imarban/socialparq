@@ -2,6 +2,8 @@ from django.conf.urls import patterns, url
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import TemplateView
 
+from migrate.poligonos import migrate
+
 from perfilador.views import CreateUserView
 from socialparq.views import ZonaParqsView, PoligonoZonaView, EquipoZonaView, PoligonoCoordenadaView
 
@@ -13,7 +15,7 @@ urlpatterns = patterns('',
 
                        # url(r'^admin/', include(admin.site.urls)),
                        url(r'^poligonos/$', TemplateView.as_view(template_name="socialparq/poligonos.html")),
-                       # url(r'^migrate$', migrate),
+                       url(r'^migrate$', migrate),
                        url(r'^zonas$', ZonaParqsView.as_view(), name="zonas"),
                        url(r'^poligono-zona$', PoligonoZonaView.as_view(), name="poligono_zona"),
                        url(r'^equipos-zona$', EquipoZonaView.as_view(), name="equipos_zona"),
