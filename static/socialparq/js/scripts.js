@@ -55,6 +55,7 @@ var pasos = $('section').length;
 		prendemos(5);
 		//FUNCIONES PARA INICIALIZAR EL GOOGLE MAPS, DARLE ESTILOS Y QUE NO SEA ANTES DE ESTO
 		initialize();
+		$(".pointer").show();
 		$(".global-container").css("padding-bottom","0px");
 		$("html, body, #map-canvas, .map").css({height: "100%", margin: "0", padding: "0" });
 	}
@@ -74,7 +75,7 @@ var pasos = $('section').length;
 	});
 
 	//boton de login
-	$(".send-facebook").click(function() {
+	$(".send-facebook, .send-inicio").click(function() {
     mapa();
 	});
 
@@ -96,7 +97,7 @@ var pasos = $('section').length;
 //ES PARA INICIAR LA APLICACIÓN
 //CUANDO TENGAMOS EL SERVICIO LISTO VAMOS A INICIAR ESTA FUNCION
 //CHACAMENTE VOY A PONER ESTA FUNCION PARA SIMULARLO
-setTimeout(function() { mapa(); }, 500);
+setTimeout(function() { iniciar(); }, 500);
 });
 
 //PRENDEMOS EL MODAL DE GRACIAS
