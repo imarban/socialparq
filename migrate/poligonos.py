@@ -45,14 +45,33 @@ def get_basic_info(schema_data):
 
 
 if __name__ == "__main__":
-    with open("poligonoecoparqenoperacion.kml", "r") as arch:
-        k = kml.KML()
-        k.from_string(arch.read())
+    def migrate_poligonos():
+        with open("poligonoecoparqenoperacion.kml", "r") as arch:
+            k = kml.KML()
+            k.from_string(arch.read())
 
         for feature in k.features():
             for folder in feature.features():
                 for placemark in folder.features():
                     for schema in placemark.extended_data.__dict__['elements']:
                         print get_basic_info(schema.__dict__['_data']).__dict__
+
+    def migrate_equipos():
+        with open("ecoparqequipos.kml", "r") as arch:
+            k = kml.KML()
+            k.from_string(arch.read())
+
+        for feature in k.features():
+            for folder in feature.features():
+                for placemark in folder.features():
+                    for schema in placemark.extended_data.__dict__['elements']:
+                        print schema.__dict__
+
+    migrate_equipos()
+
+
+
+
+
 
 
