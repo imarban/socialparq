@@ -6,9 +6,11 @@ function getLocation() {
     }
 }
 
+var posicionesFijas = [[19.38465, -99.18257], [19.38084967900005, -99.18115462199995], [19.38309, -99.18093], [19.38182181300004, -99.18105411099998]]
+
 function initialize() {
 
-    var location = new google.maps.LatLng(19.4405637, -99.1827162);
+    var location = new google.maps.LatLng(19.440525, -99.181594);
     //var location = new google.maps.LatLng(position.coords.latitude,position.coords.altitude);
 
     var mapOptions = {
@@ -17,11 +19,6 @@ function initialize() {
     };
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-    //getZonas();
-    //getPoligonoZona('54fbf5b8264a467c44d1f97b');
-    //getParquimetrosCoordenada('-99.18149056299995', '19.38065271100001')
-    getEquiposZona('54fbf5b8264a467c44d1f97b');
 }
 
 function getZonas() {
@@ -36,7 +33,7 @@ function getZonas() {
 }
 
 function drawPolygon(polygons) {
-    var location = new google.maps.LatLng(19.4405637, -99.1827162);
+    var location = new google.maps.LatLng(19.440525, -99.181594);
     //var location = new google.maps.LatLng(position.coords.latitude,position.coords.altitude);
 
     var mapOptions = {
@@ -73,7 +70,7 @@ function drawPolygon(polygons) {
     }
 }
 
-function drawMarkers(latitude, longitude) {
+function drawMarkers(latitude, longitude, imageName) {
     var myLatlng = new google.maps.LatLng(latitude, longitude);
     var mapOptions = {
         zoom: 17,
@@ -88,7 +85,7 @@ function drawMarkers(latitude, longitude) {
         position: myLatlng,
         map: map,
         title: "Hello World!",
-        icon: iconBase + 'pin.png'
+        icon: iconBase + imageName
 
     });
 
@@ -136,25 +133,56 @@ function getEquiposZona(idZona) {
             //console.log(value.latitud, value.longitud);
 
         });
-        drawMarkers(data.puntos[0].latitud, data.puntos[0].longitud);
+        drawMarkers(data.puntos[0].latitud, data.puntos[0].longitud, 'pin-parking.png');
     });
 }
 
 function locateMe() {
-    var location = new google.maps.LatLng(19.4405637, -99.1827162);
 
+    drawMarkers(19.440525, -99.181594, 'pin.png');
+}
+
+function getCercano(latitud, longitud) {
+    $.get("/cercano?latitud=" + latitud + "&longitud=" + longitud, function (data) {
+        drawMarkers(data.latitud, data.longitud, 'pin-parking.png');
+    });
+}
+
+function getLugarDisponible() {
+    var lugar = posicionesFijas[Math.floor(Math.random() * posicionesFijas.length)]
+
+    var location = new google.maps.LatLng(lugar[0], lugar[1]);
     var mapOptions = {
         zoom: 17,
         center: location
     };
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-}
 
-function getCercano(latitud, longitud) {
-    $.get("/cercano?latitud=" + latitud + "&longitud=" + longitud, function (data) {
-        drawMarkers(data.latitud, data.longitud);
+    var iconBase = 'http://localhost:8000/static/socialparq/images/';
+
+    var infowindow = new google.maps.InfoWindow({
+        //content: "<a id='hay_lugar' class='tooltips' href='#'><span><p class='' style='text-transform:uppercase;'>Aquí hay un lugar</p>	<p"
+
+        content: "<a href='#' class='tooltips'"
+        + "><span><p style='text-transform:uppercase;'>Aquí hay un lugar</p>"
+        + "<p>RodOrozc te espera</p><p>Auto gris</p></span></a>'"
     });
+
+    var marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: "Estás aquí",
+        icon: iconBase + 'pin.png'
+
+    });
+
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.open(map, marker);
+    });
+
+    marker.setMap(map);
+
 }
 
 $(document).on('click', '.btn-operacion', function () {
@@ -169,4 +197,9 @@ $(document).on('click', '.pointer', function () {
 $(document).on('click', '.btn-cercano', function () {
     getCercano(19.383629, -99.180945);
 });
+
+$(document).on('click', '.btn-busco', function () {
+    getLugarDisponible();
+});
+
 
