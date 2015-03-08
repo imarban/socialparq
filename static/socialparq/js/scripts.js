@@ -2,7 +2,16 @@ $(function() {
 //VARIABLES GLOBALES
 var pasos;
 var pasos = $('section').length;
+
+  function prender_menu(){
+		//$("#menu-lateral").toggle();	
+		$("#menu-lateral").animate({left: '0em'}, 500, function() { $(this).show();} );
+	}
  
+  function apagar_menu(){
+		$("#menu-lateral").animate({left: '-22em'}, 500, function() { $(this).show();} );
+	}
+
   function apagamos(salida){
 		//COMIENZA CON EL DOS PORQUE QUEREMOS APAGAR LAS SECCIONES DE ABAJO 
 		for(x=salida;x>=1;x--){
@@ -38,6 +47,16 @@ var pasos = $('section').length;
 	  apagamos(3);
 		prendemos(4);
 	} 
+
+  //FUNCION PARA PRENDER O APAGAR EL MAPA
+	function mapa(){	
+	  apagamos(4);
+		prendemos(5);
+		//FUNCIONES PARA INICIALIZAR EL GOOGLE MAPS, DARLE ESTILOS Y QUE NO SEA ANTES DE ESTO
+		initialize();
+		$(".global-container").css("padding-bottom","0px");
+		$("html, body, #map-canvas, .map").css({height: "100%", margin: "0", padding: "0" });
+	}
   
 	//boton de registro
 	$(".btn-registrarse").click(function() {
@@ -49,9 +68,46 @@ var pasos = $('section').length;
     login();
 	});
 
+	//boton de login
+	$(".send-facebook").click(function() {
+    mapa();
+	});
+
+	$(".navbar-toggle").click(function(){
+		prender_menu();
+	});
+
+	$(".btn-cerrar").click(function(){
+		apagar_menu();
+	});
 
 //ES PARA INICIAR LA APLICACIÓN
 //CUANDO TENGAMOS EL SERVICIO LISTO VAMOS A INICIAR ESTA FUNCION
 //CHACAMENTE VOY A PONER ESTA FUNCION PARA SIMULARLO
-setTimeout(function() { iniciar(); }, 4000);
+setTimeout(function() { iniciar(); }, 500);
 });
+
+//FUNCIONES PARA EL MAPA
+/*
+function getLocation() {
+	if (navigator.geolocation) {
+			return navigator.geolocation.getCurrentPosition(initialize);
+	} else {
+			x.innerHTML = "Geolocation is not supported by this browser.";
+	}
+}
+function initialize() {
+
+	var location = new google.maps.LatLng(19.4405637, -99.1827162);
+	//var location = new google.maps.LatLng(position.coords.latitude,position.coords.altitude);
+
+	var mapOptions = {
+			zoom: 17,
+			center: location
+	};
+
+	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+}
+*/
+//google.maps.event.addDomListener(window, 'load', initialize);
