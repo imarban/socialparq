@@ -348,19 +348,25 @@ margin-top: -5.7em !important;
 }
 
 a.tooltips {
-position: relative;
+position: absolute;
 display: inline;
+left:50px;
+top:150px;
+}
+a.tooltips span p{
+margin:2px auto;	
+text-align:left;
 }
 a.tooltips span {
 position: absolute;
 width:140px;
 color: #FFFFFF;
-background: #000000;
-height: 30px;
-line-height: 30px;
+background: #ff4d4d;
+height: auto;
+line-height: inherit;
 text-align: center;
 visibility: hidden;
-border-radius: 6px;
+border-radius: 0px;
 }
 a.tooltips span:after {
 content: '';
@@ -369,15 +375,16 @@ top: 100%;
 left: 50%;
 margin-left: -8px;
 width: 0; height: 0;
-border-top: 8px solid #000000;
+border-top: 8px solid #ff4d4d;
 border-right: 8px solid transparent;
 border-left: 8px solid transparent;
 }
 a:hover.tooltips span {
 visibility: visible;
-opacity: 0.8;
+opacity: 1;
 bottom: 30px;
 left: 50%;
 margin-left: -76px;
 z-index: 999;
+padding: 9px;
 }
