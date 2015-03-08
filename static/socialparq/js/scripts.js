@@ -32,7 +32,7 @@ var pasos = $('section').length;
 
 	function iniciar(){
 		//cambiamos el color de fondo por el azul
-		$(".global-container").css("background-color", "#00a0dd");
+		$(".global-container").css({backgroundColor: "#00a0dd",paddingBottom:"inherit"});
 		//VAMOS A ESCONDER LAS SECCIONES QUE NO NECESITAMOS
 		//PRENDEMOS EL PASO 1  
 		apagamos(1);
@@ -111,7 +111,7 @@ var pasos = $('section').length;
 //ES PARA INICIAR LA APLICACIÓN
 //CUANDO TENGAMOS EL SERVICIO LISTO VAMOS A INICIAR ESTA FUNCION
 //CHACAMENTE VOY A PONER ESTA FUNCION PARA SIMULARLO
-setTimeout(function() { iniciar(); }, 500);
+setTimeout(function() { iniciar(); }, 1500);
 });
 
 //PRENDEMOS EL MODAL DE GRACIAS
