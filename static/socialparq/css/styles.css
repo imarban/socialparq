@@ -352,17 +352,17 @@ z-index: 99;
 margin-top: -5.7em !important;	
 }
 
-a.tooltips {
+a.tooltipses {
 position: absolute;
 display: inline;
 left:50px;
 top:250px;
 }
-a.tooltips span p{
+a.tooltipses span p{
 margin:2px auto;	
 text-align:left;
 }
-a.tooltips span {
+a.tooltipses span {
 position: absolute;
 width:140px;
 color: #FFFFFF;
@@ -373,7 +373,7 @@ text-align: center;
 visibility: hidden;
 border-radius: 0px;
 }
-a.tooltips span:after {
+a.tooltipses span:after {
 content: '';
 position: absolute;
 top: 100%;
@@ -384,7 +384,7 @@ border-top: 8px solid #ff4d4d;
 border-right: 8px solid transparent;
 border-left: 8px solid transparent;
 }
-a:hover.tooltips span {
+a:hover.tooltipses span {
 visibility: visible;
 opacity: 1;
 bottom: 30px;
@@ -396,7 +396,7 @@ padding: 9px;
 .me-retiro-title{
 background-color:#ff5f5f;
 }
-a.tooltips.tooltips-retiro span{
+a.tooltipses.tooltips-retiro span{
 width:23em;	
 }
 .btn-tengo-prisa{
