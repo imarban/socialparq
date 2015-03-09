@@ -109,8 +109,14 @@ var pasos = $('section').length;
 
 	//
 	$(".ubica").click(function(){
-		$(".ubicalo").show(); 
-		$(".desoc").hide();
+		$(this).toggleClass("socialparq");
+		if ($(this).hasClass("socialparq")){
+			$(this).html("SocialParq<img src='/static/socialparq/images/btn-flecha.png' class='btn-flecha' />");
+		}else{
+			$(this).html("Ubica tu parquímetro<img src='/static/socialparq/images/btn-flecha.png' class='btn-flecha' />");
+		}
+		$(".ubicalo").toggle(); 
+		$(".desoc").toggle();
 	});	
 
 //ES PARA INICIAR LA APLICACIÓN
